@@ -1,27 +1,29 @@
-import config from "@/app/config";
-
-export interface FetchArgs {
+export interface FetchArgs extends RequestInit {
   url: string;
-  options?: RequestInit;
 }
 
-export const serverApiFetch = async ({ url, options }: FetchArgs) => {
+export async function serverApiFetch<T>({
+  url,
+  ...options
+}: FetchArgs): Promise<T> {
+  const baseUrl = process.env.NEXT_PUBLIC_NODE_SERVER;
 
-  const baseurl = config.serverURL;
-  const headers = { "Content-Type": "application/json", ...options?.headers };
   try {
-    const res = await fetch(`${baseurl}${url}`, {
-      headers,
+    const res = await fetch(`${baseUrl}${url}`, {
       cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+        ...(options.headers || {}),
+      },
       ...options,
-    }); 
+    });
 
     if (!res.ok) {
       const msg = await res.text();
       throw new Error(`API ${res.status}: ${msg || res.statusText}`);
     }
 
-    return await res.json();
+    return (await res.json()) as T;
   } catch (err) {
     console.error(
       "[serverApi error]",
@@ -29,43 +31,49 @@ export const serverApiFetch = async ({ url, options }: FetchArgs) => {
     );
     throw err;
   }
+}
 
-};
-
+// Reusable method wrappers
 export const server = {
-  get: (url: string, options?: RequestInit) =>
-    serverApiFetch({ url, options: { ...options, method: "GET" } }),
+  get: async <T>(url: string, options?: RequestInit) =>
+    serverApiFetch<T>({ url, method: "GET", ...options }),
 
-  post: (url: string, body?: any, options?: RequestInit) =>
-    serverApiFetch({
+  post: async <T, B extends object>(
+    url: string,
+    body: B,
+    options?: RequestInit
+  ) =>
+    serverApiFetch<T>({
       url,
-      options: {
-        method: "POST",
-        body: JSON.stringify(body),
-        ...options,
-      },
+      method: "POST",
+      body: JSON.stringify(body),
+      ...options,
     }),
 
-  put: (url: string, body?: any, options?: RequestInit) =>
-    serverApiFetch({
+  put: async <T, B extends object>(
+    url: string,
+    body: B,
+    options?: RequestInit
+  ) =>
+    serverApiFetch<T>({
       url,
-      options: {
-        method: "PUT",
-        body: JSON.stringify(body),
-        ...options,
-      },
+      method: "PUT",
+      body: JSON.stringify(body),
+      ...options,
     }),
 
-  patch: (url: string, body?: any, options?: RequestInit) =>
-    serverApiFetch({
+  patch: async <T, B extends object>(
+    url: string,
+    body: B,
+    options?: RequestInit
+  ) =>
+    serverApiFetch<T>({
       url,
-      options: {
-        method: "PATCH",
-        body: JSON.stringify(body),
-        ...options,
-      },
+      method: "PATCH",
+      body: JSON.stringify(body),
+      ...options,
     }),
 
-  delete: (url: string, options?: RequestInit) =>
-    serverApiFetch({ url, options: { ...options, method: "DELETE" } }),
+  delete: async <T>(url: string, options?: RequestInit) =>
+    serverApiFetch<T>({ url, method: "DELETE", ...options }),
 };
