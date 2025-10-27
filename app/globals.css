@@ -13,6 +13,26 @@
   --primary-700:#1f7aa0
   --primary-800:#185f7c
   --primary-900:#12485f
+
+  /* SUCCESS COLOR */
+  --success-lightHover:#49A85F
+  --sucess-active:#1C9237
+  --success-darkHover:#198532
+
+  /* INFO COLORS */
+  --infoLightHover:#33BDFF
+  --infoActive:#00ADFF
+  --infoDarkColor:#009DE8
+
+  /* WARNING COLORS */
+  --warning-lighthover:#FFD84F
+  --warning-active:#FFCE23
+  --warning-darkhover:#E8BB20
+
+  /* DANGER COLORS */
+  --dangerLightHover:#E33A4B
+  --dangerActive:#DC091E
+  --dangerDarkHover:#C8081B
 }
 
 @theme inline {
@@ -28,6 +48,27 @@
   --color-primary-700:var(--primary-700)
   --color-primary-800:var(--primary-800)
   --color-primary-800:var(--primary-900)
+
+  /* SUCCESS */
+  --color-SuccesslightHover:var(--success-lightHover)
+  --color-SuccessdarkHover:var(--success-darkHover)
+  --color-Successactive:var(--sucess-active)
+
+  /* INFO COLORS */
+  --color-infoLightHover:var(--infoLightHover)
+  --color-infoActive:var(--infoActive)
+  --color-infoDarkColor:var(--infoDarkColor)
+
+  /* WARNING COLORS */
+  --color-warningLightHover:var(--warning-lighthover)
+  --color-warningActive:var(--warning-active)
+  --color-warningDarkHover:var(--warning-darkhover)
+
+  /* DANGER COLORS */
+  --color-dangerLightHover:var(--dangerLightHover)
+  --color-dangerDarkHover:var(--dangerDarkHover)
+  --color-dangerActive:var(--dangerActive)
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
