@@ -37,6 +37,11 @@ const config: Config = {
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
       },
+      lineHeight: {
+        base: "var(--leading)", 
+        tight: "1.2",
+        loose: "1.8",
+      },
     },
   },
   plugins: [],

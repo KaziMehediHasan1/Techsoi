@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/layouts/Navbar";
 import Footer from "./components/layouts/Footer";
+import MiniNavbar from "./components/layouts/MiniNavbar";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} antialiased min-h-svh flex flex-col`}
       >
+        <MiniNavbar/>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
