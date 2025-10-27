@@ -6,7 +6,7 @@ export async function serverApiFetch<T>({
   url,
   ...options
 }: FetchArgs): Promise<T> {
-  const baseUrl = process.env.NEXT_PUBLIC_NODE_SERVER;
+  const baseUrl = "https://jsonplaceholder.typicode.com";
 
   try {
     const res = await fetch(`${baseUrl}${url}`, {
