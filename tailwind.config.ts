@@ -1,23 +1,45 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}", // App Router
-    "./pages/**/*.{js,ts,jsx,tsx}", // Pages Router
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#1E3A8A", // example, replace with Figma hex
-        secondary: "#F59E0B",
-        accent: "#10B981",
-        // add all colors from Figma here
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: {
+          50: "var(--primary-50)",
+          100: "var(--primary-100)",
+          200: "var(--primary-200)",
+          300: "var(--primary-300)",
+          400: "var(--primary-400)",
+          500: "var(--primary-500)",
+          600: "var(--primary-600)",
+          700: "var(--primary-700)",
+          800: "var(--primary-800)",
+          900: "var(--primary-900)",
+        },
+        secondary: "var(--secondary)",
+        success: {
+          light: "var(--success-lightHover)",
+          active: "var(--success-active)",
+          dark: "var(--success-darkHover)",
+        },
+        danger: {
+          light: "var(--dangerLightHover)",
+          active: "var(--dangerActive)",
+          dark: "var(--dangerDarkHover)",
+        },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"], // Figma font
-        heading: ["Poppins", "sans-serif"],
+        sans: ["DM Sans", "sans-serif"],
       },
     },
   },
   plugins: [],
 };
+
+export default config;
