@@ -31,14 +31,14 @@ const FilteringBar = () => {
   return (
     <div className="bg-primary-50">
       <CommonWrapper>
-        <section>
-          <div className="flex items-center justify-between gap-2">
+        <section className="">
+          <div className="overflow-x-auto scrollbar-hide flex items-center justify-between gap-5 md:gap-2 scrollbar-hide whitespace-nowrap text-[12px] md:text-[18px]">
             {Links.map((link) => (
               <button
                 key={link}
                 onMouseEnter={() => handleMouseEnter(link)}
                 onMouseLeave={handleMouseLeave}
-                className="py-2 rounded hover:text-SuccessActive hover:cursor-pointer"
+                className="py-2 rounded hover:text-SuccessActive hover:cursor-pointer shrink-0 "
               >
                 {link}
               </button>

@@ -6,7 +6,7 @@ import Image from "next/image";
 const MiniNavbar = ({ name, offer }: { name: string; offer: string }) => {
   return (
     <CommonWrapper>
-      <section className="flex items-center justify-between">
+      <section className="hidden md:flex items-center justify-between">
         <div className="cursor-pointer flex items-center gap-x-2">
           <Image src={CallIcon} alt="My Icon" className="w-2 sm:w-4" />
           <p className="leading-[150%] text-[8px] sm:text-sm text-basicDarkOne">Phone +888 8888 888</p>
