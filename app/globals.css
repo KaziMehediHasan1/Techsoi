@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+body{
+  padding: 0px;
+  margin: 0px;
+}
+.my-input::-webkit-search-cancel-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

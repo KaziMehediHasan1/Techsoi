@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/layouts/Navbar";
 import Footer from "./components/layouts/Footer";
 import MiniNavbar from "./components/layouts/MiniNavbar";
+import LinkBar from "./components/layouts/LinkBar";
+import FilteringBar from "./components/layouts/FilteringBar";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -29,8 +31,10 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} antialiased min-h-svh flex flex-col`}
       >
-        <MiniNavbar/>
+        <MiniNavbar />
         <Navbar />
+        <LinkBar />
+        <FilteringBar />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

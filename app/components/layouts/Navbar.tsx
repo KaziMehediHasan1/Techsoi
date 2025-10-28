@@ -1,50 +1,79 @@
+"use client";
 import Logo from "@/public/icons/logo.svg";
 import Favourite from "@/public/icons/favourite.svg";
 import Shopping from "@/public/icons/shopping-cart.svg";
-
+import SearchIcon from "@/public/icons/search.svg";
 import CommonWrapper from "./CommonWrapper";
 import Image from "next/image";
-import { CiSearch } from "react-icons/ci";
 import Link from "next/link";
+import { useMemo } from "react";
+import { Debounce } from "@/app/lib/utils/Debounce";
 
 const Navbar = () => {
+  const debouncedSearch = useMemo(
+    () =>
+      Debounce((text: string) => {
+        console.log("Searching for:", text);
+      }, 2000),
+    []
+  );
   return (
     <CommonWrapper>
-      <section className="flex items-center justify-between ">
+      <section className="flex items-center justify-between">
         <Link href="/">
-          <Image src={Logo} alt="My Icon" className="w-[100px] md:w-[200px]" />
+          <Image src={Logo} alt="My Icon" className="w-[120px] md:w-[200px]" />
         </Link>
 
         <div className="relative hidden lg:block w-full max-w-xl">
           <input
+            onChange={(e) => {
+              debouncedSearch(e.target.value);
+            }}
             type="search"
             placeholder="Search products.."
-            className="placeholder:text-basicDark border-primary-200 border-2 py-2 rounded-xl focus:outline-none px-4 w-full"
+            className="placeholder:text-basicDark text-basicDark border-primary-100 border py-2 rounded-xl focus:outline-none px-4 w-full my-input"
           />
+          <button type="submit" className="absolute inset-y-0 right-0 pr-3">
+            <Image src={SearchIcon} alt="Favourite" width={20} height={20} />
+          </button>
         </div>
 
         <div className="flex items-center gap-5">
           <section className="flex gap-2">
-            <Image
-              src={Favourite}
-              alt="Favourite"
-              className="w-6 h-6 bg-primary-50 p-0.5 rounded-full"
-            />
+            <div className="relative w-10 h-10">
+              <Image
+                src={Favourite}
+                alt="Favourite"
+                className="w-full h-full bg-primary-50 p-2 rounded-full"
+              />
+              <span className="absolute inset-y-1 right-0.5 flex items-center justify-center w-4.5 h-4.5 text-[10px] leading-[150%] text-white bg-primary-500 rounded-full">
+                4
+              </span>
+            </div>
             <div className="hidden md:block">
-              <p className="text-sm md:text-[18px] text-primary-500">Favorite</p>
-              <p className="text-xs md:text-sm">$670</p>
+              <p className="text-sm md:text-[18px] text-primary-500 font-medium">
+                Favourite
+              </p>
+              <p className="text-xs md:text-sm">৳260</p>
             </div>
           </section>
 
           <section className="flex gap-2">
-            <Image
-              src={Shopping}
-              alt="Shopping"
-              className="w-6 h-6 bg-primary-50 p-0.5 rounded-full"
-            />
+            <div className="relative w-10 h-10">
+              <Image
+                src={Shopping}
+                alt="Shopping"
+                className="w-full h-full bg-primary-50 p-2 rounded-full"
+              />
+              <span className="absolute inset-y-1 right-0.5 flex items-center justify-center w-4.5 h-4.5 text-[10px] leading-[150%] text-white bg-primary-500 rounded-full">
+                9
+              </span>
+            </div>
             <div className="hidden md:block">
-              <p className="text-sm md:text-[18px] text-primary-500">Shopping</p>
-              <p className="text-xs md:text-sm">$230</p>
+              <p className="text-sm md:text-[18px] text-primary-500 font-medium">
+                My Cart
+              </p>
+              <p className="text-xs md:text-sm">৳590</p>
             </div>
           </section>
         </div>
