@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 import { Debounce } from "@/app/lib/utils/Debounce";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 const Navbar = () => {
   const debouncedSearch = useMemo(
@@ -20,9 +21,20 @@ const Navbar = () => {
   return (
     <CommonWrapper>
       <section className="flex items-center justify-between">
-        <Link href="/">
-          <Image src={Logo} alt="My Icon" className="w-[120px] md:w-[200px]" />
-        </Link>
+        {/* THIS SECTION FOR MOBILE DEVICE ONLY */}
+
+        <section className="flex items-center gap-3">
+          <div className="block md:hidden">
+            <HiOutlineMenu size="25" />
+          </div>
+          <Link href="/">
+            <Image
+              src={Logo}
+              alt="My Icon"
+              className="w-[120px] md:w-[200px]"
+            />
+          </Link>
+        </section>
 
         <div className="relative hidden lg:block w-full max-w-xl">
           <input
@@ -38,8 +50,18 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="flex items-center gap-5">
-          <section className="flex gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 md:gap-5">
+          <div className="block md:hidden w-10 h-10">
+              <button type="submit">
+                <Image
+                  src={SearchIcon}
+                  alt="Favourite"
+                  className="w-full h-full bg-primary-50 p-2.5 rounded-full"
+                />
+              </button>
+            </div>
+          <section className="flex items-center gap-2">
+            
             <div className="relative w-10 h-10">
               <Image
                 src={Favourite}
@@ -58,7 +80,7 @@ const Navbar = () => {
             </div>
           </section>
 
-          <section className="flex gap-2">
+          <section className="flex items-center gap-2">
             <div className="relative w-10 h-10">
               <Image
                 src={Shopping}

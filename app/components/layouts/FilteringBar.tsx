@@ -29,7 +29,7 @@ const FilteringBar = () => {
   };
 
   return (
-    <div className="bg-primary-50">
+    <div className="bg-primary-50 hidden md:block">
       <CommonWrapper>
         <section className="">
           <div className="overflow-x-auto scrollbar-hide flex items-center justify-between gap-5 md:gap-2 scrollbar-hide whitespace-nowrap text-[12px] md:text-[18px]">
