@@ -33,6 +33,12 @@ const config: Config = {
           active: "var(--dangerActive)",
           dark: "var(--dangerDarkHover)",
         },
+
+        basic:{
+          dark:"var(--basicDark)",
+          darkOne:"var(--basicDarkOne)"
+        }
+        
       },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],

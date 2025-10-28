@@ -9,10 +9,10 @@ const MiniNavbar = ({ name, offer }: { name: string; offer: string }) => {
       <section className="flex items-center justify-between">
         <div className="cursor-pointer flex items-center gap-x-2">
           <Image src={CallIcon} alt="My Icon" className="w-2 sm:w-4" />
-          <p className="leading-[150%] text-[8px] sm:text-sm">Phone +888 8888 888</p>
+          <p className="leading-[150%] text-[8px] sm:text-sm text-basicDarkOne">Phone +888 8888 888</p>
         </div>
 
-        <div className="leading-[150%] text-[8px] sm:text-sm">
+        <div className="leading-[150%] text-[8px] sm:text-sm text-basicDarkOne">
           {offer
             ? offer
             : "Get Upto 25% cashback using this Coupon Code: 8558212"}
@@ -20,7 +20,7 @@ const MiniNavbar = ({ name, offer }: { name: string; offer: string }) => {
 
         <div className="cursor-pointer hidden sm:flex items-center gap-x-2">
           <Image src={UserIcon} alt="My Icon"  className="w-4 h-4" />
-          <p className="leading-[150%] text-sm">
+          <p className="leading-[150%] text-sm text-basicDarkOne">
             {name ? name : "Mr. Jhon Don"}
           </p>
         </div>

@@ -34,6 +34,10 @@
   --dangerActive: #dc091e;
   --dangerDarkHover: #c8081b;
 
+  /* BASIC DARK COLOR */
+  --basicDark: #808080;
+  --basicDarkOne: #505050;
+
   /* LINE HEIGHT */
   --leading: 150%;
 }
@@ -72,8 +76,9 @@
   --color-dangerDarkHover: var(--dangerDarkHover);
   --color-dangerActive: var(--dangerActive);
 
-  /* LINE HEIGHT */
- 
+  /* BASIC DARK COLOR */
+  --color-basicDark: var(--basicDark);
+  --color-basicDarkOne: var(--basicDarkOne);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
