@@ -30,7 +30,9 @@ const ModalForSearchBar = ({ closeModal }: { closeModal: () => void }) => {
         </div>
 
         {/* SEARCH DATA SHOWING THIS PLACE - START */}
-        <div className="my-5 text-basicDarkOne text-center">Search your favourite products...</div>
+        <div className="my-5 text-basicDarkOne text-center">
+          Search your favourite products...
+        </div>
         {/* SEARCH DATA SHOWING THIS PLACE - END */}
 
         <button

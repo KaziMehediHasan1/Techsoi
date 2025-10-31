@@ -8,11 +8,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Debounce } from "@/app/lib/utils/Debounce";
-import { HiOutlineMenu } from "react-icons/hi";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import ModalForSearchBar from "../shared/ModalForSearchBar";
+import SideBarMenu from "../shared/SideBarMenu";
 
 const Navbar = () => {
   const [modal, setModal] = useState<boolean>(false);
+  const [menu, setMenu] = useState<boolean>(false);
   const debouncedSearch = useMemo(
     () =>
       Debounce((text: string) => {
@@ -23,7 +25,10 @@ const Navbar = () => {
 
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
-  console.log(modal, "madal er ki khobor");
+
+  const openMenu = () => setMenu(true);
+  const closeMenu = () => setMenu(false);
+  console.log(modal, menu, "madal er ki khobor");
   return (
     <>
       <CommonWrapper>
@@ -31,8 +36,12 @@ const Navbar = () => {
           {/* THIS SECTION FOR MOBILE DEVICE ONLY - Start */}
 
           <section className="flex items-center gap-3">
-            <div className="block md:hidden">
-              <HiOutlineMenu size="25" />
+            <div className="block md:hidden text-primary-500">
+              {!menu ? (
+                <HiOutlineMenu onClick={openMenu} size="25" />
+              ) : (
+                <HiOutlineX onClick={closeMenu} size="25" />
+              )}
             </div>
             <Link href="/">
               <Image
@@ -114,6 +123,9 @@ const Navbar = () => {
       <section className="flex items-center justify-center">
         {modal && <ModalForSearchBar closeModal={closeModal} />}
       </section>
+
+      {/* when click the menu-bar icon then sidebar modal is open */}
+      <section>{menu && <SideBarMenu closeMenu={closeMenu} openMenu={menu} />}</section>
     </>
   );
 };
