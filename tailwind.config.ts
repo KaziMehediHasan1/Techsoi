@@ -34,17 +34,17 @@ const config: Config = {
           dark: "var(--dangerDarkHover)",
         },
 
-        basic:{
-          dark:"var(--basicDark)",
-          darkOne:"var(--basicDarkOne)"
-        }
-        
+        basic: {
+          dark: "var(--basicDark)",
+          darkOne: "var(--basicDarkOne)",
+          darkTwo: "var(--basicDarkTwo)",
+        },
       },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
       },
       lineHeight: {
-        base: "var(--leading)", 
+        base: "var(--leading)",
         tight: "1.2",
         loose: "1.8",
       },

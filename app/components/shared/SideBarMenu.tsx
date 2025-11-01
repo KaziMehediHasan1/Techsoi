@@ -32,7 +32,6 @@ type MenuType = {
 
 const SideBarMenu = ({ closeMenu, openMenu }: MenuType) => {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
-
   const toggleCategory = (category: string) => {
     setOpenCategory(openCategory === category ? null : category);
   };

@@ -34,7 +34,7 @@ const LinkBar = () => {
               <Link
                 key={link.name}
                 href={link.link}
-                className="text-[12px] md:text-[18px] hover:underline"
+                className="text-sm md:text-[18px] hover:underline"
               >
                 {link.name}
               </Link>
@@ -43,7 +43,7 @@ const LinkBar = () => {
 
           <Link
             href="contact-us"
-            className="bg-white py-1 sm:py-2 px-2 sm:px-5 leading-[150%] text-[12px] md:text-[18px] text-basicDarkOne rounded-lg"
+            className="bg-white py-1 sm:py-2 px-2 sm:px-5 leading-[150%] text-sm md:text-[18px] text-basicDarkOne rounded-lg"
           >
             Contact Us
           </Link>

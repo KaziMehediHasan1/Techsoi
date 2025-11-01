@@ -48,6 +48,7 @@ body{
   /* BASIC DARK COLOR */
   --basicDark: #808080;
   --basicDarkOne: #505050;
+  --basicDarkTwo: #303030;
 
   /* LINE HEIGHT */
   --leading: 150%;
@@ -90,6 +91,7 @@ body{
   /* BASIC DARK COLOR */
   --color-basicDark: var(--basicDark);
   --color-basicDarkOne: var(--basicDarkOne);
+  --color-basicDarkTwo: var(--basicDarkTwo);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
