@@ -41,6 +41,7 @@ const FilteringBar = () => {
                 className="py-2 rounded hover:text-SuccessActive hover:cursor-pointer shrink-0 "
               >
                 {link}
+                {/* <div className="text-primary-200">|</div> */}
               </button>
             ))}
           </div>

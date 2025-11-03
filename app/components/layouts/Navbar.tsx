@@ -6,15 +6,18 @@ import SearchIcon from "@/public/icons/search.svg";
 import CommonWrapper from "./CommonWrapper";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Debounce } from "@/app/lib/utils/Debounce";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import ModalForSearchBar from "../shared/ModalForSearchBar";
 import SideBarMenu from "../shared/SideBarMenu";
+import { cn } from "@/app/lib/utils/cn";
+
 
 const Navbar = () => {
   const [modal, setModal] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
+
   const debouncedSearch = useMemo(
     () =>
       Debounce((text: string) => {
@@ -22,13 +25,25 @@ const Navbar = () => {
       }, 2000),
     []
   );
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setModal(false);
+      } else {
+        setModal(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
 
   const openMenu = () => setMenu(true);
   const closeMenu = () => setMenu(false);
   console.log(modal, menu, "madal er ki khobor");
+
   return (
     <>
       <CommonWrapper>
@@ -54,7 +69,7 @@ const Navbar = () => {
 
           {/* THIS SECTION FOR MOBILE DEVICE ONLY - End */}
 
-          <div className="relative hidden md:block w-full max-w-xl">
+          <div className="relative hidden md:block w-full max-w-xl mx-4">
             <input
               onChange={(e) => {
                 debouncedSearch(e.target.value);
@@ -89,7 +104,7 @@ const Navbar = () => {
                   4
                 </span>
               </div>
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <p className="text-sm md:text-[18px] text-primary-500 font-medium">
                   Favourite
                 </p>
@@ -108,7 +123,7 @@ const Navbar = () => {
                   9
                 </span>
               </div>
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <p className="text-sm md:text-[18px] text-primary-500 font-medium">
                   My Cart
                 </p>
@@ -120,12 +135,14 @@ const Navbar = () => {
       </CommonWrapper>
 
       {/* when click the search icon then modal is open */}
-      <section className="flex items-center justify-center">
+      <section className={cn(modal && "hidden", "flex items-center justify-center")}>
         {modal && <ModalForSearchBar closeModal={closeModal} />}
       </section>
 
       {/* when click the menu-bar icon then sidebar modal is open */}
-      <section>{menu && <SideBarMenu closeMenu={closeMenu} openMenu={menu} />}</section>
+      <section >
+        {menu && <SideBarMenu closeMenu={closeMenu} openMenu={menu} />}
+      </section>
     </>
   );
 };

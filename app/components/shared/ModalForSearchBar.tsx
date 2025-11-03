@@ -14,7 +14,7 @@ const ModalForSearchBar = ({ closeModal }: { closeModal: () => void }) => {
   );
   return (
     <section className="fixed inset-0 md:hidden flex justify-center top-1/5 sm:top-1/4 z-50">
-      <div className="relative bg-primary-300/50 backdrop-blur-lg w-full max-w-[90%] h-1/2 py-8 px-4 transform translate-all rounded-xl shadow-lg duration-300">
+      <div className="relative bg-white backdrop-blur-lg w-full max-w-[90%] h-1/2 py-8 px-4 transform translate-all rounded-xl shadow-lg duration-300">
         <div className="relative md:hidden block w-full mt-5">
           <input
             onChange={(e) => {
@@ -22,7 +22,7 @@ const ModalForSearchBar = ({ closeModal }: { closeModal: () => void }) => {
             }}
             type="search"
             placeholder="Search products.."
-            className="placeholder:text-basicDark text-black border-white border py-2 rounded-xl focus:outline-none px-4 w-full my-input"
+            className="placeholder:text-basicDark text-black border-basicDark border py-2 rounded-xl focus:outline-none px-4 w-full my-input"
           />
           <button type="submit" className="absolute inset-y-0 right-0 pr-3 ">
             <Image src={SearchIcon} alt="Favourite" width={20} height={20} />

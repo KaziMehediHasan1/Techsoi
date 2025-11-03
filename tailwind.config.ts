@@ -38,6 +38,7 @@ const config: Config = {
           dark: "var(--basicDark)",
           darkOne: "var(--basicDarkOne)",
           darkTwo: "var(--basicDarkTwo)",
+          darkThree: "var(--basicDarkThree)",
         },
       },
       fontFamily: {
