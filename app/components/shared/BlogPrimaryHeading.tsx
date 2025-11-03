@@ -1,19 +1,23 @@
-import ArrowIcon from "@/public/icons/arrow-up-right.svg";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const BlogPrimaryHeading = () => {
   return (
-    <div>
+    <div className="flex flex-col sm:flex-row justify-between sm:items-center-safe gap-4 sm:gap-0">
       <section>
-        <h1>Our Latest Blog</h1>
-        <p>Get Your Desired Product from Featured Category!</p>
+        <h1 className="text-3xl md:text-[40px] text-primary-500 font-semibold md:leading-[150%] capitalize">
+          Our Latest Blog
+        </h1>
+        <p className="text-sm md:text-lg text-basicDark">
+          Get Your Desired Product from Featured Category!
+        </p>
       </section>
 
-      <button className="bg-primary-50 text-primary-800 flex items-center gap-2 p-2 rounded-md">
+      <button className="bg-primary-100 flex w-fit text-primary-800 cursor-pointer  items-center gap-1.5 py-1.5 px-3 rounded-lg text-sm md:text-[16px] md:leading-[150%] transition hover:bg-primary-200">
         <span>Read All</span>
-        <ArrowIcon className="w-5 h-5 text-primary-800" />
+        <IoIosArrowRoundForward size={24} className="text-current" />
       </button>
     </div>
   );
 };
 
-export default BlogPrimaryHeading
+export default BlogPrimaryHeading;
