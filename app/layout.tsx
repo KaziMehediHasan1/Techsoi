@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-
 import Footer from "./components/layouts/Footer";
 import MiniNavbar from "./components/layouts/MiniNavbar";
-
 import FilteringBar from "./components/layouts/FilteringBar";
 import Navbar from "./components/layouts/Navbar";
-import LinkBar from "./components/layouts/LinkBar";
 
 
 const dmSans = DM_Sans({
@@ -36,7 +33,6 @@ export default function RootLayout({
       >
         <MiniNavbar />
         <Navbar/>
-        <LinkBar/>
         {/* <MobileScrolableNav /> */}
         <FilteringBar />
         <main className="flex-1">{children}</main>

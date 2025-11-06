@@ -12,6 +12,7 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import ModalForSearchBar from "../shared/ModalForSearchBar";
 import SideBarMenu from "../shared/SideBarMenu";
 import { cn } from "@/app/lib/utils/cn";
+import LinkBar from "./LinkBar";
 
 
 const Navbar = () => {
@@ -25,6 +26,7 @@ const Navbar = () => {
       }, 2000),
     []
   );
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -37,6 +39,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
 
@@ -131,16 +134,20 @@ const Navbar = () => {
               </div>
             </section>
           </div>
+
         </section>
       </CommonWrapper>
+      <LinkBar />
 
       {/* when click the search icon then modal is open */}
-      <section className={cn(modal && "hidden", "flex items-center justify-center")}>
+      <section
+        className={cn(modal && "hidden", "flex items-center justify-center")}
+      >
         {modal && <ModalForSearchBar closeModal={closeModal} />}
       </section>
 
       {/* when click the menu-bar icon then sidebar modal is open */}
-      <section >
+      <section>
         {menu && <SideBarMenu closeMenu={closeMenu} openMenu={menu} />}
       </section>
     </>

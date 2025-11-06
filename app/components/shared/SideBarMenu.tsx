@@ -1,6 +1,5 @@
 "use client";
 import { RiArrowDropDownLine } from "react-icons/ri";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineX } from "react-icons/hi";
@@ -67,7 +66,7 @@ const SideBarMenu = ({ closeMenu, openMenu }: MenuType) => {
             </button>
 
             {/* Menu Items */}
-            <nav className="mt-14 flex flex-col gap-3 px-6">
+            <nav className="mt-14 flex flex-col gap-3 px-6 w-full">
               {Object.keys(FilterData).map((category) => (
                 <div key={category} className="w-full">
                   <button
@@ -99,7 +98,7 @@ const SideBarMenu = ({ closeMenu, openMenu }: MenuType) => {
                               <h4 className="text-lg capitalize font-medium text-primary-500">
                                 {key}
                               </h4>
-                              <div className="border-[0.5px] border-primary-100 w-full" />
+                              
                               <ul className="ml-2 text-basicDarkOne text-sm">
                                 {(values as string[]).map((item) => (
                                   <li
