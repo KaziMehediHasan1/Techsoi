@@ -3,6 +3,7 @@
 body{
   padding: 0px;
   margin: 0px;
+  overflow-x: hidden;
 }
 .my-input::-webkit-search-cancel-button {
   display: none;

@@ -1,17 +1,30 @@
+import { motion } from "framer-motion";
 type PrimaryTitleType = {
   headingOne: string;
   headingTwo: string;
   subheading: string;
 };
 
-const PrimaryTitle = ({ headingOne, headingTwo, subheading }: PrimaryTitleType) => {
+const PrimaryTitle = ({
+  headingOne,
+  headingTwo,
+  subheading,
+}: PrimaryTitleType) => {
   return (
-    <div className="text-center">
-      <h1 className="text-3xl md:text-[40px] font-semibold md:leading-[150%] capitalize">
+    <div className="flex flex-col items-center">
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="text-3xl md:text-[40px] font-semibold md:leading-[150%] capitalize max-w-fit"
+      >
         <span className="text-basicDarkThree">{headingOne}</span>
         <span className="text-primary-500">{headingTwo}</span>
-      </h1>
-      <p className="text-sm md:text-lg text-basicDark">{subheading}</p>
+      </motion.h1>
+
+      <span className="text-sm md:text-lg text-basicDark w-[50%] max-w-fit text-center">
+        {subheading}
+      </span>
     </div>
   );
 };

@@ -28,7 +28,7 @@ const LinkBar = () => {
   return (
     <div className="bg-primary-500 py-1">
       <CommonWrapper>
-        <section className="flex items-center justify-between">
+        <section className="flex items-center justify-between ">
           <div className="flex items-center gap-3 sm:gap-5 md:gap-10 leading-[150%] text-white font-medium">
             {Links.map((link) => (
               <Link

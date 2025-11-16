@@ -3,7 +3,8 @@ import ArrowIcon from "@/public/icons/arrow-up-right.svg"
 import PC from "@/public/icons/cupcase.png"
 const Hero = () => {
   return (
-    <div className="bg-primary-50 rounded-lg p-4 sm:pl-28 sm:pt-28 sm:pb-20 sm:pr-44 flex flex-col sm:flex-row gap-10 justify-between">
+    <div className="bg-primary-50 rounded-lg p-4 sm:pl-28 sm:pt-28 sm:pb-20 sm:pr-44 flex flex-col md:flex-row gap-10 justify-between">
+     
       <section className="space-y-6 md:space-y-14">
 
         <div className="space-y-2 md:space-y-[17px] w-full max-w-[490px]">
