@@ -13,17 +13,29 @@ const CategoryProducts = () => {
           headingTwo=" Category"
           subheading="Get Your Desired Product from Featured Category!"
         />
-        {/* Logos */}
-        <section className="flex flex-wrap-reverse gap-4 items-center justify-between">
+        <section
+          className="
+          flex 
+          flex-wrap 
+          justify-center 
+          gap-6"
+        >
           {ProductCategory.map((cat) => (
             <div
               key={cat.name}
-              className="flex flex-col items-center space-y-2"
+              className="
+              flex flex-col items-center space-y-2 
+              basis-1/4 xl:basis-auto"
             >
               <Image
                 src={cat.icon}
                 alt={cat.name}
-                className="bg-primary-50 w-full max-w-[90px] p-5 rounded-[99px]"
+                className="
+                bg-primary-50 
+                w-full 
+                max-w-[90px] 
+                p-3 sm:p-5 
+                rounded-[99px]"
               />
               <p className="text-[16px] leading-[150%] text-primary-800">
                 {cat.name}
