@@ -13,19 +13,15 @@ const CategoryProducts = () => {
           headingTwo=" Category"
           subheading="Get Your Desired Product from Featured Category!"
         />
+        {/* LOGOS START */}
         <section
-          className="
-          flex 
-          flex-wrap 
-          justify-center 
-          gap-6"
+          className="flex items-center justify-between"
         >
           {ProductCategory.map((cat) => (
             <div
               key={cat.name}
               className="
-              flex flex-col items-center space-y-2 
-              basis-1/4 xl:basis-auto"
+              flex flex-col shrink-0 items-center space-y-2"
             >
               <Image
                 src={cat.icon}
@@ -34,7 +30,7 @@ const CategoryProducts = () => {
                 bg-primary-50 
                 w-full 
                 max-w-[90px] 
-                p-3 sm:p-5 
+                p-5 
                 rounded-[99px]"
               />
               <p className="text-[16px] leading-[150%] text-primary-800">
@@ -43,6 +39,7 @@ const CategoryProducts = () => {
             </div>
           ))}
         </section>
+        {/* LOGOS ENDS */}
       </div>
     </CommonWrapper>
   );
