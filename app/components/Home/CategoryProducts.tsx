@@ -15,24 +15,32 @@ const CategoryProducts = () => {
         />
         {/* LOGOS START */}
         <section
-          className="flex items-center justify-between"
+          className="
+          flex 
+          flex-wrap 
+          gap-6
+          justify-center
+          xl:flex-nowrap  
+          xl:justify-between"
         >
           {ProductCategory.map((cat) => (
             <div
               key={cat.name}
-              className="
-              flex flex-col shrink-0 items-center space-y-2"
+              className="flex flex-col items-center space-y-2"
             >
               <Image
                 src={cat.icon}
                 alt={cat.name}
                 className="
-                bg-primary-50 
-                w-full 
-                max-w-[90px] 
-                p-5 
-                rounded-[99px]"
-              />
+                bg-primary-50
+                w-full
+                aspect-square
+                max-w-[90px]          
+                sm:max-w-20           
+                max-[480px]:max-w-20 
+                p-5
+                rounded-[99px]"/>
+
               <p className="text-[16px] leading-[150%] text-primary-800">
                 {cat.name}
               </p>
