@@ -47,7 +47,7 @@ const TopSellingProducts = () => {
                   <Image
                     src={Star}
                     alt="Favourite"
-                    className="w-6 h-6 md:w-8 md:h-8 p-1 rounded-full object-contain"
+                    className="w-6 h-6 md:w-7 md:h-7 p-1 rounded-full object-contain"
                   />
                   <p className="text-sm">
                     {item.review} ({item.totalreviews})
