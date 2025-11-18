@@ -12,7 +12,7 @@ const Hero = () => {
             <button className="text-sm md:text-[16px] text-basicDarkOne bg-white rounded-[100px] py-2 px-3 leading-[150%]">
               New Released
             </button>
-            <h1 className="text-basicDarkTwo text-4xl md:text-6xl leading-[120%]">
+            <h1 className="text-basicDarkTwo sm:text-4xl md:text-6xl leading-[120%]">
               Best and Premium Computer Cases
             </h1>
             <p className="text-primary-500 text-lg md:text-2xl">

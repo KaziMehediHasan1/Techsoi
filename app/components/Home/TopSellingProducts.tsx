@@ -17,64 +17,68 @@ const TopSellingProducts = () => {
           subheading="Get Your Desired Product from Featured Category!"
         />
         {/* CARDS DATA START */}
-        <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-4 justify-items-center">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 justify-items-stretch">
           {cards.map((item) => (
             <section
               key={item.id}
-              className="border border-primary-100 rounded-[20px] space-y-4  p-4 w-full max-w-[360px]"
+              className="border border-primary-100 rounded-[20px] space-y-4 p-4 w-full overflow-hidden"
             >
               <Image
                 alt={item.title}
                 src={item.image}
-                width={200}
-                height={200}
-                className="w-fit mx-auto"
+                className="w-full max-w-[180px] mx-auto object-contain"
               />
-              <h1 className="text-[22px] font-medium leading-[130%] text-basicDarkTwo">
+
+              <h1 className="text-xl md:text-[22px] font-medium leading-[130%] text-basicDarkTwo">
                 {item.title}
               </h1>
+
               <section className="flex items-center justify-between">
                 <div className="flex items-center gap-x-3">
-                  <p className="text-2xl font-semibold leading-[130%] text-primary-500">
+                  <p className="text-md md:text-2xl font-semibold leading-[130%] text-primary-500">
                     {item.price}
                   </p>
-                  <del className="text-[16px] leading-[150%] font-normal text-basicDark ">
+                  <del className="text-sm md:text-[16px] leading-[150%] text-basicDark">
                     {item.previousprice}
                   </del>
                 </div>
-                <div className="flex items-center ">
+
+                <div className="flex items-center gap-1 shrink-0">
                   <Image
                     src={Star}
                     alt="Favourite"
-                    className="w-8 h-8 p-2 rounded-full"
+                    className="w-6 h-6 md:w-8 md:h-8 p-1 rounded-full object-contain"
                   />
-                  <p>
+                  <p className="text-sm">
                     {item.review} ({item.totalreviews})
                   </p>
                 </div>
               </section>
+
               <section className="flex items-center justify-between">
-                <button className="flex items-center gap-x-3 cursor-pointer bg-primary-50 pl-2 pr-4 py-1 rounded-xl">
+                <button className="flex items-center gap-x-2 cursor-pointer bg-primary-50 pl-2 pr-4 py-1 rounded-xl shrink-0">
                   <Image
                     src={Buy}
-                    alt="Favourite"
-                    className="w-10 h-10  p-2 rounded-full"
+                    alt="Buy"
+                    className="w-8 h-8 md:w-10 md:h-10 p-2 rounded-full object-contain"
                   />
-                  <p>Buy Now</p>
+                  <p className="text-sm md:text-[16px]">Buy Now</p>
                 </button>
-                <div className="flex items-center gap-x-3">
-                  <button className="cursor-pointer">
+
+                <div className="flex items-center gap-x-3 shrink-0">
+                  <button>
                     <Image
                       src={Shopping}
-                      alt="Favourite"
-                      className="w-full h-full bg-primary-50  p-3 rounded-xl"
+                      alt="Shopping"
+                      className="w-8 h-8 md:w-10 md:h-10 bg-primary-50 p-2 rounded-xl object-contain"
                     />
                   </button>
-                  <button className="cursor-pointer">
+
+                  <button>
                     <Image
                       src={Favourite}
                       alt="Favourite"
-                      className="w-full h-full bg-primary-50 p-3 rounded-xl"
+                      className="w-8 h-8 md:w-10 md:h-10 bg-primary-50 p-2 rounded-xl object-contain"
                     />
                   </button>
                 </div>
