@@ -7,7 +7,7 @@ import ProductCategory from "@/app/lib/constants/Logo";
 const CategoryProducts = () => {
   return (
     <CommonWrapper>
-      <div className="space-y-12">
+      <div className="space-y-12 mt-[120px]">
         <PrimaryTitle
           headingOne="Products By"
           headingTwo=" Category"
