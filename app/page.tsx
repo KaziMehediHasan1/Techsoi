@@ -4,6 +4,7 @@ import Hero from "./components/Home/Hero";
 import Review from "./components/Home/Review";
 import TopSellingProducts from "./components/Home/TopSellingProducts";
 import WeAreProvide from "./components/Home/WeAreProvide";
+import BlogCards from "./components/shared/BlogCards";
 
 export default async function Home() {
   return (
@@ -14,6 +15,7 @@ export default async function Home() {
       <TopSellingProducts />
       <WeAreProvide />
       <Review />
+      <BlogCards />
     </>
   );
 }
